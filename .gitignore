@@ -1,0 +1,10 @@
+backups-dup-lite/
+plugins/
+upgrade/
+uploads/
+debug.log
+languages/
+upgrade-temp-backup/
+index.php
+themes/twentytwentyfour/
+themes/twentytwentythree/
