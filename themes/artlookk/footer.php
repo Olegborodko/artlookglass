@@ -134,7 +134,7 @@
         </div>
         <hr class="hr_footer">
         <div class="footer__copyright">
-            <p>© Copyright 2015-2023 Artlookglass.com</p>
+            <p>© Copyright 2015-2024 Artlookglass.com</p>
         </div>
     </div>
 </footer>

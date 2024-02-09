@@ -11304,3 +11304,19 @@ input[type=submit]:hover{
   font-size: 16px;
   font-weight: 500;
 }
+
+
+form.wpcf7-form.invalid span.art_checkbox_contact_confirm span.wpcf7-list-item-label{
+  position: relative;
+  top: 4px;
+}
+
+span.art_checkbox_contact_confirm + span.wpcf7-not-valid-tip{
+  position: relative;
+  left: 25px;
+  top: 14px;
+}
+
+form.wpcf7-form .wpcf7-form-control::placeholder {
+  font-family: "Montserrat", sans-serif; 
+}
