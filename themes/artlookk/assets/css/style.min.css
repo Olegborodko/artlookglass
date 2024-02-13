@@ -11320,3 +11320,153 @@ span.art_checkbox_contact_confirm + span.wpcf7-not-valid-tip{
 form.wpcf7-form .wpcf7-form-control::placeholder {
   font-family: "Montserrat", sans-serif; 
 }
+
+/* steps calculate cost */
+div.partitions__quiz__steps Transition{
+  display: none;
+}
+
+.section__partitions__quiz .section__partitions__quiz__wrap{
+  padding: 0;
+}
+
+.art_calculate_cost .partitions__quiz__block__footer, 
+.art_calculate_cost.section__partitions__quiz .section__partitions__quiz__wrap .partitions__quiz__block .partitions__quiz__block__header{
+  display: none;
+}
+
+.art_calculate_cost.section__partitions__quiz .artitions__quiz__nav{
+  float: right;
+  position: relative;
+  top: -30px;
+}
+
+.partitions__quiz__block__footer{
+  text-align: center;
+}
+
+.partitions__quiz__block__footer span{
+  display: inline-block;
+  height: 18px;
+  width: 18px;
+  margin: 0 5px;
+  border: 1px solid rgba(48, 184, 196, 1);
+  border-radius: 50%;
+  background-color: white;
+}
+
+.art_calculate_cost Transition[data-step="1"] input[type="radio"],
+.art_calculate_cost Transition[data-step="2"] input[type="radio"],
+.art_calculate_cost Transition[data-step="3"] input[type="radio"],
+.art_calculate_cost Transition[data-step="4"] input[type="radio"]{
+  position: absolute;
+  appearance: none;
+  top: 20px;
+  right: 20px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 25px;
+  width: 25px;
+  border: 2px solid #2eb4c9;
+  border-radius: 50%;
+  background-color: #ffffff;
+  outline: none;
+}
+
+.art_calculate_cost Transition[data-step="1"] input[type="radio"]:checked::before,
+.art_calculate_cost Transition[data-step="2"] input[type="radio"]:checked::before,
+.art_calculate_cost Transition[data-step="3"] input[type="radio"]:checked::before,
+.art_calculate_cost Transition[data-step="4"] input[type="radio"]:checked::before{
+  content: '';
+  display: block;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background-color: #2eb4c9;
+  position: absolute;
+  left: 2.8px;
+}
+
+.art_calculate_cost Transition[data-step="6"] input[type="radio"]{
+  appearance: none;
+  height: 25px;
+  width: 25px;
+  border: 2px solid #2eb4c9;
+  background-color: #ffffff;
+  border-radius: 50%;
+  outline: none;
+  position: relative;
+  margin-right: 31px;
+}
+
+.art_calculate_cost Transition[data-step="6"] input[type="radio"]:checked::before{
+  content: '';
+  display: block;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background-color: #2eb4c9;
+  position: absolute;
+  left: 2.8px;
+  top: 3px;
+}
+
+.art_calculate_cost Transition[data-step="6"] .form__input__simple{
+  padding-left: 37px!important;
+}
+
+#art_steep_files .wpcf7-form-control-wrap{
+  border: 0;
+}
+
+.art_cost_final_step form label{
+  color: #232C2E;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.art_cost_final_step .form-content__input-message{
+  margin-bottom: 20px;
+}
+
+.art_cost_final_step .wpcf7-form-control.wpcf7-submit{
+  margin: 40px 0 0;
+  display: inline-block;
+  width: auto;
+  padding: 0 20px;
+  min-width: 200px;
+}
+
+.art_cost_final_step .final__form__form__footer{
+  gap: 0!important;
+  position: relative;
+}
+
+.art_cost_final_step .final__form__form__footer .wpcf7-spinner{
+  position: absolute;
+  top: 25px;
+}
+
+.art_cost_final_step .wpcf7 form.invalid .wpcf7-response-output, .wpcf7 form.unaccepted .wpcf7-response-output, .wpcf7 form.payment-required .wpcf7-response-output{
+  margin-top: 10px;
+}
+
+#art_steep_files .input_upload_subtext{
+  color: #979AB1;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 97.184%;
+  margin-top: 10px;
+  text-transform: initial;
+}
+
+#art_steep_files{
+  height: initial;
+  padding: 15px 0 35px;
+}
+
+#art_steep_back_files{
+  display: none;
+}

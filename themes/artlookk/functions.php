@@ -204,8 +204,11 @@ add_action('wp_footer', 'custom_cf7_success_script');
 function custom_cf7_success_script() {
     ?>
     <script type="text/javascript">
+      var formSubmitted = false;
+
         function showFormMsg(formId){
           if (formId == event.detail.contactFormId) {
+                // console.log('==> ', formId);
                 document.getElementById('m_contact_form_id_' + formId).style.display = 'none';
                 document.getElementById('m_contact_form_success_id_' + formId).style.display = 'block';
             }
@@ -215,7 +218,23 @@ function custom_cf7_success_script() {
             showFormMsg('492');
             showFormMsg('6');
             showFormMsg('493');
+            showFormMsg('2210');
         }, false);
+
+        // document.addEventListener('wpcf7submit', function (event) {
+        //   if ('2210' == event.detail.contactFormId) {
+        //     event.preventDefault();
+
+        //     $("Transition[data-step=5] #art_steep_files").appendTo($("Transition[data-step=8] #art_steep_back_files"));
+
+        //     setTimeout(function () {
+        //       let formData = new FormData(event.target);
+        //       let xhr = new XMLHttpRequest();
+        //       xhr.open('POST', event.target.action, true);
+        //       xhr.send(formData);
+        //     }, 1000);
+        //   }
+        // }, false);
     </script>
     <?php
 }

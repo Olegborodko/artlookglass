@@ -552,4 +552,138 @@ document.addEventListener('change', function (e) {
 });
 
 
+// partitions quiz steps calculate cost
+let section = "section.art_calculate_cost";
+let step = 0;
+
+function pagination_circle_paint(value){
+  $("div.partitions__quiz__block__footer.art_pagination_steps span").css("background", "#ffffff");
+  for (let i = 1; i <= value; i++) { 
+    $("div.partitions__quiz__block__footer.art_pagination_steps span[data-id="+i+"]").css("background", "#30b8c4")
+  }
+}
+
+function show_paginations(show = false){
+  $(section +  " div.partitions__quiz__block__footer").css("display", show ? "block" : "none");
+  $(section +  " div.partitions__quiz__block__header").css("display", show ? "block" : "none");
+}
+
+function step_next(show){
+  $(section + " Transition").css("display", "none");
+  $(section + " Transition[data-step="+show+"]").css("display", "block");
+
+  pagination_circle_paint(show);
+}
+
+$(section + " button.start__btn").click(function(){
+  step = 1;
+  step_next(1);
+  show_paginations(true);
+});
+
+function art_move_field_files(step){
+  if (step === 5){
+    // select files move to another steep 
+    $("#art_steep_files").appendTo($("#art_step5_block_files"));
+  } 
+  if (step === 8){
+    $("#art_steep_files").appendTo($("#art_steep_back_files"));
+  }
+}
+
+$("div.art_arrows_block button.nav-section__item.port-next-right.slick-arrow").click(function(){
+  if (step <=7){
+    step = step + 1;
+    step_next(step);
+
+    art_move_field_files(step);
+  }
+});
+
+$("div.art_arrows_block button.nav-section__item.port-prev-left.slick-arrow").click(function(){
+  if (step >= 1){
+    step = step - 1;
+    step_next(step);
+
+    if (step === 0){
+      show_paginations(false);
+    }
+
+    art_move_field_files(step);
+  }
+});
+
+function step_move_value(elFrom, elTo){
+  let selectedValue = $(section + elFrom).val();
+  if (selectedValue){
+    $(elTo).val(selectedValue);
+  }
+}
+
+$(section + " Transition[data-step=1] div.partitions__quiz__col").click(function(){
+  step_move_value(' Transition[data-step=1] input[name="where_would_you_like_to_install_a_glass_partition"]:checked', '#art_step_glass_partition');
+  // step = 2;
+  // step_next(2);
+});
+
+$(section + " Transition[data-step=2] div.partitions__quiz__col").click(function(){
+  step_move_value(' Transition[data-step=2] input[name="what_type_of_system_meets_your_aesthetics"]:checked', '#art_step_type_of_system');
+  // step = 3;
+  // step_next(3);
+});
+
+$(section + " Transition[data-step=3] div.partitions__quiz__col").click(function(){
+  step_move_value(' Transition[data-step=3] input[name="which_door_type_do_you_prefer"]:checked', '#art_step_door_type');
+  // step = 4;
+  // step_next(4);
+});
+
+$(section + " Transition[data-step=4] div.partitions__quiz__col").click(function(){
+  step_move_value(' Transition[data-step=4] input[name="what_type_of_glass_do_you_prefer"]:checked', '#art_step_type_of_glass');
+  // step = 5;
+  // step_next(5);
+});
+
+$(section + " Transition[data-step=5] button.next_step_6").click(function(){
+  // step = 6;
+  // step_next(6);
+});
+
+$(section + " Transition[data-step=5] input[name='dimensions_inch_1']").on('change', function() {
+  let inputValue = $(this).val();
+  
+  if (inputValue){
+    $('#art_step_dimensions_width').val(inputValue);
+  }
+});
+
+$(section + " Transition[data-step=5] input[name='dimensions_inch_2']").on('change', function() {
+  let inputValue = $(this).val();
+  
+  if (inputValue){
+    $('#art_step_dimensions_height').val(inputValue);
+  }
+});
+
+$(section + " Transition[data-step=6] label.form__input__simple").click(function(){
+  art_step_delivery
+  step_move_value(' Transition[data-step=6] input[name="do_you_need_delivery_and_installation_services"]:checked', '#art_step_delivery');
+  // step = 7;
+  // step_next(7);
+});
+
+$("Transition[data-step=7].art_i_am .iama__card").click(function(){
+  $("Transition[data-step=7].art_i_am .iama__card").css("border", "2px solid #e3e3e3");
+  $("Transition[data-step=7].art_i_am .iama__card span").css("color", "#979ab1");
+
+  let el = $(this);
+  let child = $(this).find("span");
+
+  el.css("border", "2px solid #30b8c4");
+  child.css("color", "#30b8c4");
+
+  art_step_delivery
+  step_move_value(' Transition[data-step=7] input[name="customer-role"]:checked', '#art_step_i_am');
+});
+
 });
